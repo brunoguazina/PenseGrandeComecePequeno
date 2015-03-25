@@ -18,14 +18,46 @@ body {
   background: url(../images/logoPenseGrandeComecePequeno.png);
   background-size: 100%;
   background-repeat: no-repeat;
-  width: 400px;
-  height: 250px;
-  margin: 0 auto;
+  width: 500px;
+  height: 160px;
+  margin: 25px auto 0 auto;
 }
+
 .conteudo {
-  font-size: 26px;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: lighter;
+  font-style: italic;
   width: 600px;
   margin: 0 auto;
   text-align: center;
-  color: white;
+  color: #fff;
+}
+
+p {
+  font-size: 20px;
+  color: #fdd000;
+  margin: 75px 0;
+  span {
+    color: #FFF;
+  }
+}
+
+input[type="text"] {
+  width: 450px;
+  height: 50px;
+  font-size: 18px; 
+  padding: 0 0 0 15px;
+  border: none;
+  vertical-align: top;
+}
+
+input[type="submit"] {
+  cursor:pointer;
+  background-color: #fdd000;
+  vertical-align: top;
+  font-size: 18px;
+  border: none;
+  height: 50px; 
+  width: 90px;
 }
