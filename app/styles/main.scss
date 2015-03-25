@@ -1,63 +1,114 @@
 
-body {
-  background: url(../images/background.jpg);
-  font-family: 'Open Sans', Helvetica, sans-serif;
-  height: 100%;
-  background-size: 100%;
-  color: #333;
+@font-face {
+    font-family: 'webfont';
+    src: url('../fonts/webfont.eot');
+    src: url('../fonts/webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/webfont.woff2') format('woff2'),
+         url('../fonts/webfont.woff') format('woff'),
+         url('../fonts/webfont.ttf') format('truetype'),
+         url('../fonts/webfont.svg#please_write_me_a_songmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 
-  h1 {
+body {
+    background: url(../images/background.jpg);
+    font-family: 'webfont', sans-serif;
+    height: 100%;
+    background-size: 100%;
+    color: #333;
+}
+
+
+h1 {
     font-size: 60px;
     line-height: 1;
     letter-spacing: -1px;
-  }
+}
+
 
 .logo {
-  background: url(../images/logoPenseGrandeComecePequeno.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  width: 500px;
-  height: 160px;
-  margin: 25px auto 0 auto;
+    background: url(../images/logoPenseGrandeComecePequeno.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 450px;
+    height: 160px;
+    margin: 65px auto 0 auto;
 }
+
 
 .conteudo {
-  text-transform: uppercase;
-  font-size: 24px;
-  font-weight: lighter;
-  font-style: italic;
-  width: 600px;
-  margin: 0 auto;
-  text-align: center;
-  color: #fff;
+    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: lighter;
+    width: 630px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
 }
+
 
 p {
-  font-size: 20px;
-  color: #fdd000;
-  margin: 75px 0;
-  span {
-    color: #FFF;
-  }
+    font-size: 36px;
+    color: #fdd000;
+    margin: 60px 0 20px 0;
+    
+    span {
+        color: #FFF;
+    }
 }
+
 
 input[type="text"] {
-  width: 450px;
-  height: 50px;
-  font-size: 18px; 
-  padding: 0 0 0 15px;
-  border: none;
-  vertical-align: top;
+    width: 500px;
+    height: 60px;
+    font-size: 18px; 
+    padding: 0 0 0 15px;
+    border: none;
+    vertical-align: top;
+    border-radius: 7px;
 }
 
+
 input[type="submit"] {
-  cursor:pointer;
-  background-color: #fdd000;
-  vertical-align: top;
-  font-size: 18px;
-  border: none;
-  height: 50px; 
-  width: 90px;
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+    cursor:pointer;
+    background-color: #fdd000;
+    vertical-align: top;
+    font-size: 18px;
+    border: none;
+    height: 60px; 
+    width: 90px;
+
+    &:hover {
+        background-color: darken(#fdd000, 5%);
+    }
 }
+
+
+@media (max-width: 380px) {
+
+    .logo {
+        background: url(../images/logoPenseGrandeComecePequeno.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 160px;
+        margin: 25px auto 0 auto;
+    }
+
+    .conteudo {
+        width: 300px;
+    
+        input[type="text"]{
+            width: 200px;
+        }
+    }
+}
+
+
+
+
