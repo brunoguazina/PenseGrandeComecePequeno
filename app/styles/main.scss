@@ -60,7 +60,7 @@ p {
 }
 
 
-input[type="text"] {
+input[type="email"] {
     width: 500px;
     height: 60px;
     font-size: 18px; 
@@ -68,8 +68,14 @@ input[type="text"] {
     border: none;
     vertical-align: top;
     border-radius: 7px;
+    
 }
 
+.mce_inline_error{
+    background: lighten(red, 40%);
+    border: 1px solid lighten(red, 20%) !important;
+    color: black;
+}
 
 input[type="submit"] {
     -webkit-appearance: none;
