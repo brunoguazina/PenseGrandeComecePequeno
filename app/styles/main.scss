@@ -21,20 +21,13 @@ body {
 }
 
 
-h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-}
-
-
 .logo {
     background: url(../images/logoPenseGrandeComecePequeno.png);
     background-size: 100%;
     background-repeat: no-repeat;
     width: 450px;
     height: 160px;
-    margin: 65px auto 0 auto;
+    margin: 35px auto 0 auto;
 }
 
 
@@ -48,13 +41,19 @@ h1 {
     color: #fff;
 }
 
+.textoInformativo{
+    font-size: 20px;
+}
 
 p {
+    width: 550px;
+    text-align: center;
     font-size: 36px;
     color: #fdd000;
-    margin: 55px 0 20px 0;
+    margin: 25px auto 55px auto;
     
     span {
+        font-size: 36px;
         color: #FFF;
     }
 }
