@@ -13,6 +13,7 @@ $("#mc-embedded-subscribe-form").submit(function(){
 		}
 		else {
 			alert("Este endereço de email não é válido!");
+			$("#mce-EMAIL").val("");	
 			return false;
 		}
 	}
