@@ -23,6 +23,23 @@ gulp.task('styles', function () {
     .pipe(reload({stream: true}));
 });
 
+gulp.task('style', function () {
+  return gulp.src('app/styles/main.scss')
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      outputStyle: 'nested', // libsass doesn't support expanded yet
+      precision: 10,
+      includePaths: ['.'],
+      onError: console.error.bind(console, 'Sass error:')
+    }))
+    .pipe($.postcss([
+      require('autoprefixer-core')({browsers: ['last 1 version']})
+    ]))
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('.tmp/styles' ))
+    .pipe(reload({stream: true}));
+});
+
 gulp.task('scripts', function () {
   return gulp.src('app/scripts/**/*')
   .pipe(gulp.dest('dist/images'));
@@ -114,7 +131,7 @@ gulp.task('wiredep', function () {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['scripts', 'html', 'images', 'fonts', 'extras'], function () {
+gulp.task('build', ['scripts', 'html', 'images', 'style', 'fonts', 'extras'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
