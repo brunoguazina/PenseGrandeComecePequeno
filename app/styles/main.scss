@@ -42,7 +42,7 @@ body {
 }
 
 p {
-    width: 680px;
+    width: 575px;
     text-align: center;
     font-size: 36px;
     color: #fdd000;
@@ -56,7 +56,7 @@ p {
 
 
 input[type="email"] {
-    width: 568px;
+    width: 625px;
     height: 60px;
     font-size: 18px; 
     padding: 0 0 0 15px;
@@ -75,8 +75,11 @@ input[type="submit"] {
     vertical-align: top;
     font-size: 18px;
     border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     height: 60px; 
     width: 90px;
+    margin: 0 0 0 -55px;
 
     &:hover {
         background-color: darken(#fdd000, 5%);
@@ -84,6 +87,11 @@ input[type="submit"] {
 }
 
 footer {
+    position: absolute;
+    display: block;
+    bottom: 10px;
+    width: 98%;
+
     .numeroDeTelefone {
         color: #FFF;
         text-align: center;

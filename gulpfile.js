@@ -1,13 +1,13 @@
 /*global -$ */
 'use strict';
-// generated on 2015-03-25 using generator-gulp-webapp 0.3.0
+// generated on 2015-03-17 using generator-gulp-webapp 0.3.0
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
 gulp.task('styles', function () {
-  return gulp.src('app/styles/main.scss')
+  return gulp.src('app/styles/**/*')
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       outputStyle: 'nested', // libsass doesn't support expanded yet
@@ -19,12 +19,12 @@ gulp.task('styles', function () {
       require('autoprefixer-core')({browsers: ['last 1 version']})
     ]))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('dist/styles' ))
+    .pipe(gulp.dest('.tmp/styles'))
     .pipe(reload({stream: true}));
 });
 
 gulp.task('style', function () {
-  return gulp.src('app/styles/main.scss')
+  return gulp.src('app/styles/**/*')
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       outputStyle: 'nested', // libsass doesn't support expanded yet
@@ -36,13 +36,8 @@ gulp.task('style', function () {
       require('autoprefixer-core')({browsers: ['last 1 version']})
     ]))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('.tmp/styles' ))
+    .pipe(gulp.dest('dist/styles'))
     .pipe(reload({stream: true}));
-});
-
-gulp.task('scripts', function () {
-  return gulp.src('app/scripts/**/*')
-  .pipe(gulp.dest('dist/images'));
 });
 
 gulp.task('html', ['styles'], function () {
@@ -78,6 +73,11 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest('dist/fonts'));
 });
 
+gulp.task('scripts', function() {
+  return gulp.src('app/scripts/**/*')
+  .pipe(gulp.dest('dist/scripts'));
+});
+
 gulp.task('extras', function () {
   return gulp.src([
     'app/*.*',
@@ -104,7 +104,6 @@ gulp.task('serve', ['styles', 'fonts'], function () {
   // watch for changes
   gulp.watch([
     'app/*.html',
-    'app/scripts/**/*.js',
     'app/images/**/*',
     '.tmp/fonts/**/*'
   ]).on('change', reload);
@@ -131,7 +130,7 @@ gulp.task('wiredep', function () {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['scripts', 'html', 'images', 'style', 'fonts', 'extras'], function () {
+gulp.task('build', ['html', 'images', 'styles', 'style', 'scripts', 'fonts', 'extras'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
